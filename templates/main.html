@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter App</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+  </head>
+  <body>
+    <h1>Twitter</h1>
+    <h3>My timeline</h3>
+    <form action="/timeline" method="get">
+      <section>
+        <input type="submit" class="button" value="Get home timeline" id="get-button">
+        {% for tweet in tweets_from_timeline %}
+        <ul>
+          <li>{{ tweet.text }}</li>
+        </ul>
+        {% endfor %}
+      </section>
+    </form>
+    <h3>Tweet something:</h3>
+    <form action="/tweet" method="post">
+      <section>
+        <input type="text" id="tweet" name="Tweet" class="box" placeholder="What's happening?">
+        <br>
+        <input type="submit" id="post-button" value="Tweet">
+        {% if response %}
+        <ul>
+          <li>{{ response }}</li>
+        </ul>
+        {% endif %}
+      </section>
+    </form>
+  </body>
+</html>

@@ -11,7 +11,7 @@ access_token = os.environ.get("access_token", None)
 access_token_secret = os.environ.get("access_token_token", None)
 
 
-app = Flask("my_app")
+# app = Flask("my_app")
 # with open("credentials.txt", "r") as file:
 #     consumer_key = file.readline().split()[2]
 #     consumer_secret = file.readline().split()[2]

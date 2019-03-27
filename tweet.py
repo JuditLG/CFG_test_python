@@ -5,12 +5,18 @@ import os
 app = Flask("Twitter")
 port = int(os.environ.get("PORT", 5000))
 
+consumer_key = os.environ.get("consumer_key", None)
+consumer_secret = os.environ.get("consumer_secret", None)
+access_token = os.environ.get("access_token", None)
+access_token_secret = os.environ.get("access_token_token", None)
+
+
 app = Flask("my_app")
-with open("credentials.txt", "r") as file:
-    consumer_key = file.readline().split()[2]
-    consumer_secret = file.readline().split()[2]
-    access_token = file.readline().split()[2]
-    access_token_secret = file.readline().split()[2]
+# with open("credentials.txt", "r") as file:
+#     consumer_key = file.readline().split()[2]
+#     consumer_secret = file.readline().split()[2]
+#     access_token = file.readline().split()[2]
+#     access_token_secret = file.readline().split()[2]
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
